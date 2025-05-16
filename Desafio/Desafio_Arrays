@@ -1,0 +1,18 @@
+# productos_1 = ['a','b','c','d','e']
+# productos_2 = ['d','e','f','j','k']
+
+# en_comun = [None] * (len(productos_1))
+
+# for i in range(len(productos_1)):
+#     en_comun[i] = productos_1[i]
+
+
+# for i in range(len(en_comun)):
+#     for j in range(len(productos_2)):
+#         if en_comun[i] == productos_2[j]:
+#             en_comun += [i]
+#             break
+
+# print(en_comun)
+
+
