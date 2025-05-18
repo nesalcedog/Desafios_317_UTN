@@ -1,18 +1,47 @@
-# productos_1 = ['a','b','c','d','e']
-# productos_2 = ['d','e','f','j','k']
+# 📌 Objetivo: Escribir un programa en Python que permita analizar estos historiales de compra y responder las siguientes preguntas:
+#  1️⃣ Productos en común: ¿Qué productos han comprado ambos usuarios?
+#  2️⃣ Productos exclusivos: ¿Qué productos ha comprado cada usuario que el otro no ha adquirido?
+#  3️⃣ Catálogo total: ¿Cuál sería el conjunto total de productos comprados entre los dos usuarios?
+#  4️⃣ Recomendaciones: ¿Cómo podrías utilizar esta información para sugerir productos a cada usuario?
 
-# en_comun = [None] * (len(productos_1))
+def coincidencia_productos (productos1, productos2):
+
+    en_comun = [''] * len(productos1)
+    coincidencias = [''] * len(productos1)
+    a = 0
+
+    for i in range(len(productos1)):
+        en_comun[i] = productos1[i]
+
+
+    for j in range(len(productos2)):
+        for k in range(len(productos2)):
+            if productos2[j] == en_comun[k]:
+                coincidencias[a] = en_comun[k]
+                a =+1
+    
+    print(f'Productos en comun: {coincidencias}')
+
+
+
+productos_1 = ['Mate','Cafe','Harina','Palmitos','Yerba']
+productos_2 = ['Mermelada','Yerba','Cacao','Picadillo','Cafe']
+
+coincidencia_productos(productos_1, productos_2)
+
+
+# a = 0
 
 # for i in range(len(productos_1)):
 #     en_comun[i] = productos_1[i]
 
-
-# for i in range(len(en_comun)):
-#     for j in range(len(productos_2)):
-#         if en_comun[i] == productos_2[j]:
-#             en_comun += [i]
+# for j in range(len(productos_2)):
+#     for k in range(len(productos_2)):
+#         if productos_2[j] != en_comun[k]:
+#             diferencias[a] += en_comun[k]
+#             a += 1
 #             break
 
-# print(en_comun)
+# print(f'Productos diferentes: {diferencias}')
 
 
