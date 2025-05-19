@@ -4,23 +4,33 @@
 #  3️⃣ Catálogo total: ¿Cuál sería el conjunto total de productos comprados entre los dos usuarios?
 #  4️⃣ Recomendaciones: ¿Cómo podrías utilizar esta información para sugerir productos a cada usuario?
 
+def es_array_strings(lista):
+    for i in range(len(lista)):
+        if type(lista[i]) == str:
+            return True
+        return False
+        break
+
 def coincidencia_productos (productos1, productos2):
 
-    en_comun = [''] * len(productos1)
-    coincidencias = [''] * len(productos1)
-    a = 0
+    if es_array_strings(productos1) and es_array_strings(productos2):
+        en_comun = [''] * len(productos1)
+        coincidencias = [''] * len(productos1)
+        a = 0
 
-    for i in range(len(productos1)):
-        en_comun[i] = productos1[i]
+        for i in range(len(productos1)):
+            en_comun[i] = productos1[i]
 
 
-    for j in range(len(productos2)):
-        for k in range(len(productos2)):
-            if productos2[j] == en_comun[k]:
-                coincidencias[a] = en_comun[k]
-                a =+1
-    
-    print(f'Productos en comun: {coincidencias}')
+        for j in range(len(productos2)):
+            for k in range(len(productos2)):
+                if productos2[j] == en_comun[k]:
+                    coincidencias[a] = en_comun[k]
+                    a =+1
+        
+        print(f'Productos en comun: {coincidencias}')
+    else:
+        print('Ingrese datos validos')
 
 
 
@@ -29,6 +39,18 @@ productos_2 = ['Mermelada','Yerba','Cacao','Picadillo','Cafe']
 
 coincidencia_productos(productos_1, productos_2)
 
+
+# def total_productos (productos1, productos2):
+
+#     a = 0
+
+#     for j in range(len(productos2)):
+#         for k in range(len(productos2)):
+#             if productos2[j] == en_comun[k]:
+#                 coincidencias[a] = en_comun[k]
+#                 a =+1
+    
+#     print(f'Productos en comun: {coincidencias}')
 
 # a = 0
 
@@ -43,5 +65,7 @@ coincidencia_productos(productos_1, productos_2)
 #             break
 
 # print(f'Productos diferentes: {diferencias}')
+
+
 
 
