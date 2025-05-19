@@ -5,11 +5,10 @@
 #  4️⃣ Recomendaciones: ¿Cómo podrías utilizar esta información para sugerir productos a cada usuario?
 
 def es_array_strings(lista):
-    for i in range(len(lista)):
-        if type(lista[i]) == str:
-            return True
-        return False
-        break
+    for i in lista:
+        if not isinstance(i, str):
+            return False
+    return True
 
 def coincidencia_productos (productos1, productos2):
 
