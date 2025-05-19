@@ -13,6 +13,12 @@ def es_array_strings(lista):
             return False
     return True
 
+#Puse los productos de manera manual :)
+
+productos_1 = ['Mate','Cafe','Harina','Palmitos','Yerba']
+productos_2 = ['Mermelada','Yerba','Cacao','Picadillo','Cafe']
+
+# 1️⃣
 def coincidencia_productos (productos1, productos2):
 
     if es_array_strings(productos1) and es_array_strings(productos2):
@@ -28,14 +34,36 @@ def coincidencia_productos (productos1, productos2):
     else:
         print('Ingrese datos validos')
 
-
-
-productos_1 = ['Mate','Cafe','Harina','Palmitos','Yerba']
-productos_2 = ['Mermelada','Yerba','Cacao','Picadillo','Cafe']
-
 coincidencia_productos(productos_1, productos_2) #Queda separado por comas :(
 
+# 2️⃣
+def productos_exclusivos(productos1, productos2):
 
+    if es_array_strings(productos1) and es_array_strings(productos2):
+        
+        exclusivos1 = []
+        exclusivos2 = []        
+        
+        for i in range(len(productos1)):           
+            if productos1[i] in productos2:
+                continue
+            else:
+                exclusivos1 += productos1[i]
+
+        for i in range(len(productos2)):
+            if productos2[i] in productos1:
+                continue
+            else:
+                exclusivos2 += productos2[i]
+               
+        print(f'Productos exclusivos del Comprador 1: {exclusivos1}')
+        print(f'Productos exclusivos del Comprador 2: {exclusivos2}')
+    else:
+        print('Ingrese datos validos')
+
+productos_exclusivos(productos_1, productos_2) #Con comas de nuevo :(
+
+#  3️⃣
 def total_productos(productos1, productos2):
 
     productos_total = [] 
@@ -53,21 +81,3 @@ def total_productos(productos1, productos2):
         print('Ingrese datos validos')
 
 total_productos(productos_1, productos_2) #Lo mismo aca :P
-
-# a = 0
-
-# for i in range(len(productos_1)):
-#     en_comun[i] = productos_1[i]
-
-# for j in range(len(productos_2)):
-#     for k in range(len(productos_2)):
-#         if productos_2[j] != en_comun[k]:
-#             diferencias[a] += en_comun[k]
-#             a += 1
-#             break
-
-# print(f'Productos diferentes: {diferencias}')
-
-
-
-
